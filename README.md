@@ -30,12 +30,12 @@ _Stylized landing page with map type selector and Leaflet integration._
 1. Clone the repo:
    ```bash
       git clone https://github.com/samparlatore/ParlaMapper.git
-      cd ParlaMapper
+      cd ParlaMapper-main
 
 2. Create a a config.properties file in the root directory and add your Thunderforest API key to it in the following format:
    ```bash
         mapbox.token=pk.your-secret-token-here
-        thunderforest.token={Thunderforest API key}
+        thunderforest.token=Thunderforest API key
 
 3. Build:
      ```bash
