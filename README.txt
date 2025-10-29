@@ -22,7 +22,7 @@ ParlaMapper is a lightweight, Java-powered web application that renders interact
 
 ## 📸 Demo
 
-`![screenshot](https://github.com/samparlatore/ParlaMapper/blob/main/src/main/webapp/images/map-bg3.jpg)`
+`![screenshot](images/map-bg3.jpg)`
 _Stylized landing page with map type selector and Leaflet integration._
 
 ## 🔧 Setup
