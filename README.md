@@ -30,7 +30,7 @@ _Stylized landing page with map type selector and Leaflet integration._
 1. Clone the repo:
    ```bash
       git clone https://github.com/samparlatore/ParlaMapper.git
-      cd ParlaMapper-main
+      cd ParlaMapper
 
 2. Create a a config.properties file in the root directory and add your Thunderforest API key to it in the following format:
    ```bash
@@ -39,7 +39,7 @@ _Stylized landing page with map type selector and Leaflet integration._
 
 3. Build:
      ```bash
-        mvn clean package dependency:copy-dependencies -DoutputDirectory=lib
+        mvn clean package
 4. Run
     ```bash
         java -cp "target/ParlaMapper-1.0-SNAPSHOT.jar;lib/*" com.parlAquatics.Main
