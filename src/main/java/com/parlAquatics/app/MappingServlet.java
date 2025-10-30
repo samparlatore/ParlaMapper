@@ -13,16 +13,32 @@ public class MappingServlet extends HttpServlet {
         String mapType = request.getParameter("mapType");
         logger.info("mapType selected: " + mapType);
 
-        // Inject page title into application scope
-        getServletContext().setAttribute("pageTitle", "ParlaMapper");
+        String targetJsp;
+        String pageTitle;
 
-        String targetJsp = switch (mapType) {
-            case "terrain" -> "/map/terrain.jsp";
-            case "neighbourhood" -> "/map/neighbourhood.jsp";
-            case "population density" -> "/map/populationDensity.jsp";
-            default -> "/map/populationDensity.jsp";
-        };
-        // Forward to JSP
+        switch (mapType) {
+            case "terrain" -> {
+                targetJsp = "/map/terrain.jsp";
+                pageTitle = "Terrain Map Viewer";
+            }
+            case "neighbourhood" -> {
+                targetJsp = "/map/neighbourhood.jsp";
+                pageTitle = "Neighbourhood Explorer";
+            }
+            case "population density" -> {
+                targetJsp = "/map/populationDensity.jsp";
+                pageTitle = "Population Density Dashboard";
+            }
+            default -> {
+                targetJsp = "/map/populationDensity.jsp";
+                pageTitle = "ParlaMapper";
+            }
+        }
+
+        // Inject page title into application scope
+        getServletContext().setAttribute("pageTitle", pageTitle);
+
+        // Forward to selected JSP
         request.getRequestDispatcher(targetJsp).forward(request, response);
     }
 }
