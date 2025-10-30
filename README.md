@@ -22,8 +22,29 @@ ParlaMapper is a lightweight, Java-powered web application that renders interact
 
 ## 📸 Demo
 
-`![screenshot](images/map-bg3.jpg)`
+`![screenshot](src/main/webapp/images/map-bg3.jpg)`
 _Stylized landing page with map type selector and Leaflet integration._
+
+## ⚡ Quickstart
+
+    Windows
+    ```bash
+        git clone https://github.com/samparlatore/ParlaMapper.git
+        cd ParlaMapper
+        echo "mapbox.token=pk.your-secret-token-here`nthunderforest.token=Thunderforest API key" > config.properties
+        mvn clean package
+        mvn dependency:copy-dependencies -DoutputDirectory=lib
+        java -cp "target/ParlaMapper-1.0-SNAPSHOT.jar;lib/*" com.parlAquatics.Main
+
+    MacOS/Linux
+    ```bash
+        git clone https://github.com/samparlatore/ParlaMapper.git
+        cd ParlaMapper
+        echo "mapbox.token=pk.your-secret-token-here\nthunderforest.token=Thunderforest API key" > config.properties
+        mvn clean package
+        mvn dependency:copy-dependencies -DoutputDirectory=lib
+        java -cp "target/ParlaMapper-1.0-SNAPSHOT.jar:lib/*" com.parlAquatics.Main
+
 
 ## 🔧 Setup
 
@@ -34,8 +55,9 @@ _Stylized landing page with map type selector and Leaflet integration._
 
 2. Create a a config.properties file in the root directory and add your Thunderforest API key to it in the following format:
    ```bash
-        mapbox.token=pk.your-secret-token-here
-        thunderforest.token=Thunderforest API key
+        echo "mapbox.token=pk.your-secret-token-here\`nthunderforest.token=Thunderforest API key" > config.properties
+
+      (On macOS/Linux, use \n instead of \`n in the classpath)
 
 3. Build:
      ```bash
